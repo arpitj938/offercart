@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from splash_screen.views import ver_check
+from otp.views import get_otp
+from otp.views import ver_otp
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-   # url(r'^splash_screen/$', "splash_screen.views.version_no"),
+    url(r'^version/', ver_check),
+    url(r'^otp/', get_otp),
+    url(r'^otp1/', ver_otp),
+
+    #url(r'^splash_screen/$',version),
 ]
